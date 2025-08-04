@@ -87,16 +87,13 @@ console.log(forGeneric(true , 12));*/
 
 
 function userGeneric<T, U>(user: T, status: U): T & U {
-     return { ...user, ...status };
+
+const result = { ...user, ...status };
+
+return result;
   }
 
-interface Iuser{
-    username : string
-    surname : string
-    password : string
-    age : number
-    isAdmin : boolean
-}
+
 
 const User= {
     username: "yusuf",
@@ -114,4 +111,4 @@ const User= {
 
 
 
-console.log(userGeneric(User , statusCode));
+console.log(userGeneric(User, statusCode));
